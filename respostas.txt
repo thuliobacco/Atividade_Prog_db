@@ -1,0 +1,5 @@
+Thúlio Bacco || T15
+
+Models --> Acessa o banco de dados, realizando operações e definindo regras sobre os dados.
+Controller --> Funciona como um intercessor entre a View e o Models.
+EndPoint --> Rotas de comunicação entre dispositivo e sistema.
