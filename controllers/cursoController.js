@@ -12,3 +12,9 @@ exports.update = async (req, res) => {
   await Curso.update(id, nome);
   res.redirect('/alunos');
 };
+
+exports.delete = async (req, res) => {
+  const { id } = req.params;
+  await Curso.delete(id);
+  res.redirect('/alunos');
+};

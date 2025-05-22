@@ -1,83 +1,29 @@
-# Boilerplate MVC em Node.js com PostgreSQL
+Thúlio Bacco || T15
 
-Este projeto é um boilerplate básico para uma aplicação Node.js seguindo o padrão MVC (Model-View-Controller), utilizando PostgreSQL como banco de dados.
+Models --> Acessa o banco de dados, realizando operações e definindo regras sobre os dados.
+Controller --> Funciona como um intercessor entre a View e o Models.
+EndPoint --> Rotas de comunicação entre dispositivo e sistema.
 
-## Requisitos
 
-- Node.js (versão X.X.X)
-- PostgreSQL (versão X.X.X)
+SEMANA 5 - 22/05/2025
+1. Explique com suas palavras o papel de cada camada da arquitetura MVC usada neste projeto.
+Como o Model, o Controller e a View interagem entre si?
 
-## Instalação
+R: O MODELS é a parte que se comunica com o banco de dados, requisitando o que o CONTROLLERS precisa para intermediar e enviar para o VIEWS para, enfim, colocar na interface para o usuário (site)
 
-1. **Clonar o repositório:**
 
-```bash
-   git clone https://github.com/seu-usuario/seu-projeto.git
-   cd seu-projeto
-```
 
-2. **Instalar as dependências:**
-    
-```bash
-npm install
-```
-    
-3. **Configurar o arquivo `.env`:**
-    
-Renomeie o arquivo `.env.example` para `.env` e configure as variáveis de ambiente necessárias, como as configurações do banco de dados PostgreSQL.
-    
+2. Como ocorre o envio e o recebimento de dados no formato JSON neste projeto?
+Cite uma rota que responde em JSON e explique seu funcionamento.
 
-Configuração do Banco de Dados
-------------------------------
+R: Além de mostrar páginas HTML, esse projeto também usa JSON quando precisa trocar dados de forma automática, por exemplo com JavaScript ou em uma API.
+Um exemplo seria a rota GET /alunos/curso/:curso_id, retornando todos os alunos de um curso específico, mas em vez de devolver uma página, ela
+manda os dados em formato JSON. Isso é útil quando queremos carregar informações com JavaScript sem recarregar a página.
 
-1. **Criar banco de dados:**
-    
-    Crie um banco de dados PostgreSQL com o nome especificado no seu arquivo `.env`.
-    
-2. **Executar o script SQL de inicialização:**
-    
-```bash
-npm run init-db
-```
-    
-Isso criará a tabela `users` no seu banco de dados PostgreSQL com UUID como chave primária e inserirá alguns registros de exemplo.
-    
 
-Funcionalidades
----------------
 
-* **Padrão MVC:** Estrutura organizada em Model, View e Controller.
-* **PostgreSQL:** Banco de dados relacional utilizado para persistência dos dados.
-* **UUID:** Utilização de UUID como chave primária na tabela `users`.
-* **Scripts com `nodemon`:** Utilização do `nodemon` para reiniciar automaticamente o servidor após alterações no código.
-* **Testes:** Inclui estrutura básica para testes automatizados.
+3. Qual a importância de usar HTML básico com formulários e tabelas para organizar e manipular dados no navegador?
+Por que esse tipo de estrutura ainda é útil em projetos back-end com Node.js?
 
-Scripts Disponíveis
--------------------
-
-* `npm start`: Inicia o servidor Node.js.
-* `npm run dev`: Inicia o servidor com `nodemon`, reiniciando automaticamente após alterações no código.
-* `npm run test`: Executa os testes automatizados.
-* `npm run test:coverage`: Executa os testes e gera um relatório de cobertura de código.
-
-Estrutura de Diretórios
------------------------
-
-* **`config/`**: Configurações do banco de dados e outras configurações do projeto.
-* **`controllers/`**: Controladores da aplicação (lógica de negócio).
-* **`models/`**: Modelos da aplicação (definições de dados e interações com o banco de dados).
-* **`routes/`**: Rotas da aplicação.
-* **`tests/`**: Testes automatizados.
-* **`views/`**: Views da aplicação (se aplicável).
-
-Contribuição
-------------
-
-Contribuições são bem-vindas! Sinta-se à vontade para abrir um issue ou enviar um pull request.
-
-Licença
--------
-
-Este projeto está licenciado sob a Licença MIT.
-
-Este README.md fornece uma visão geral clara do boilerplate, incluindo instruções de instalação, configuração do banco de dados, funcionalidades principais, scripts disponíveis, estrutura de diretórios, como contribuir e informações de licença. Certifique-se de personalizar as seções com detalhes específicos do seu projeto conforme necessário.
+R: Mesmo com tanta tecnologia nova, o HTML básico ainda é super útil: formulários são simples e funcionam muito bem pra cadastrar coisas, como alunos e professores, tabelas organizam os dados de forma clara — uma lista de cursos, alunos com seus e-mails, etc.
+Usar HTML assim no back-end com Node.js é ótimo quando: o projeto é pequeno ou interno, você quer montar um painel administrativo rápido
